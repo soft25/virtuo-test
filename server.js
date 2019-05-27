@@ -3,7 +3,8 @@ require('dotenv').config()
 const express   = require('express'),
 	bodyParser  = require('body-parser'),
 	mongoose    = require('mongoose'),
-	product     = require('./router/product'),
+	car     = require('./routers/car'),
+	station     = require('./routers/station'),
 	app = express()
 
 app.set('view engine', 'ejs')
@@ -18,7 +19,8 @@ mongoose.connect(uri, (err, infos) => {
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/product', product)
+app.use('/car', car)
+app.use('/station', station)
 
 const port = 3000
 

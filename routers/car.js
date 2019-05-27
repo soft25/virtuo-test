@@ -1,7 +1,7 @@
 const express   = require('express'),
 	router = express.Router(),
-	get= require('../routes/get'),
-	create = require('../routes/create')
+	create = require('../routes/cars/actions/create'),
+	get = require('../routes/cars/getters/get')
 
 router.post('/create', create)
 router.get('/get/:carId', get)

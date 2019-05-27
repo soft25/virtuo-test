@@ -1,9 +1,9 @@
 const express   = require('express'),
 	router = express.Router(),
-	getAll = require('../routes/get'),
-	add = require('../routes/add')
+	create = require('../routes/stations/actions/create'),
+	get = require('../routes/stations/getters/get')
 
-router.get('/get', getAll)
-router.post('/add', add)
+router.get('/get', get)
+router.post('/create', create)
 
 module.exports = router

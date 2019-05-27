@@ -1,4 +1,5 @@
 const Car = require('../../../models/car')
+const mongoose = require('mongoose')
 
 const create = (req, res, next) => {
 	const _name = req.body.name
@@ -7,7 +8,6 @@ const create = (req, res, next) => {
 		throw new Error('Wrong arguments!!')
     
 	let car = new Car({
-		_id: new mongoose.types.ObjectId(),
 		name: _name
 	})
 
