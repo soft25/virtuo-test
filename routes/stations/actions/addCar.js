@@ -1,6 +1,5 @@
 const Station = require('../../../models/station')
 const Car = require('../../../models/car')
-const mongoose = require('mongoose')
 
 const addCar = (req, res, next) => {
 	const _carId = req.body.carId
