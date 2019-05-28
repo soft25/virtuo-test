@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const carSchema = mongoose.Schema({
-	name: { type: String, unique: true, min: 3, required: true },
+	name: { type: String, unique: true, minlength: 3, required: true },
 	available: {type: Boolean, default: true}
 })
 
