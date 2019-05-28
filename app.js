@@ -4,7 +4,8 @@ const express   = require('express'),
 	bodyParser  = require('body-parser'),
 	mongoose    = require('mongoose'),
 	car     = require('./routers/car'),
-	station     = require('./routers/station')
+	station     = require('./routers/station'),
+	morgan = require('morgan')
 
 const init = () => {
 	var app = express()
@@ -17,6 +18,7 @@ const init = () => {
 			console.log(err)
 	})
 
+	app.use(morgan('combined'))
 	app.use(bodyParser.urlencoded({ extended: false }))
 	app.use(bodyParser.json())
 
