@@ -5,6 +5,7 @@ const express   = require('express'),
 	mongoose    = require('mongoose'),
 	car     = require('./routers/car'),
 	station     = require('./routers/station'),
+	helmet      = require('helmet'),
 	morgan = require('morgan')
 
 const init = () => {
@@ -21,6 +22,7 @@ const init = () => {
 	app.use(morgan('combined'))
 	app.use(bodyParser.urlencoded({ extended: false }))
 	app.use(bodyParser.json())
+	app.use(helmet()) // for security
 
 	app.use('/car', car)
 	app.use('/station', station)
